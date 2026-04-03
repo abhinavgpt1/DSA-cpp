@@ -40,6 +40,7 @@ class Solution {
 	    for(int i=0; i<n; i++){
 	        if(matrix[i][i] < 0){
 	            // negative cycle detected
+				// Note: assertions in java doesn't work by default. You need to pass -ea flag in VM options or during interpretation (java command).
 	            assert(1 == -1);
 	        }
 	    }
@@ -80,6 +81,7 @@ class Solution {
 	    for(int i=0; i<n; i++){
 	        if(matrix[i][i] < 0){
 	            // negative cycle detected
+				// Note: assertions in java doesn't work by default. You need to pass -ea flag in VM options or during interpretation (java command).
 	            assert(1 == -1);
 	        }
 	    }

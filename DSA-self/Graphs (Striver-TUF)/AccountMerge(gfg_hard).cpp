@@ -56,6 +56,7 @@ class Solution{
             for(int j=1; j<accounts[i].size(); j++){
                 string email = accounts[i][j];
                 if(emailMap.count(email)){
+                    // Note: assertions in java doesn't work by default. You need to pass -ea flag in VM options or during interpretation (java command).
                     assert(accounts[emailMap[email]][0] == accountName); //given in question that it'll be same
                     
                     // union between account in emailMap and accounts[i]
@@ -103,6 +104,7 @@ class Solution{
             for(int j=1; j<accounts[i].size(); j++){
                 string email = accounts[i][j];
                 if(emailMap.count(email)){
+                    // Note: assertions in java doesn't work by default. You need to pass -ea flag in VM options or during interpretation (java command).
                     assert(emailMap[email].first == accountName); //given in question that it'll be same
                     
                     // union between account in emailMap and accounts[i]
