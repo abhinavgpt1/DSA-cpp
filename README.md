@@ -4,3 +4,20 @@ This repo includes
 * Some additional questions/programs and concept urls
 
 Not much addition is expected in this repo, as the questions are bookmarked in platforms profiles like gfg and leetcode.
+
+Useful commands
+---------------
+Delete all .exe files
+```
+del /S *.exe
+```
+
+Delete all .class files
+```
+del /S *.class
+```
+
+Delete all .o files
+```
+del /S *.o
+```

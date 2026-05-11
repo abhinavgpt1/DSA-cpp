@@ -5,3 +5,7 @@
 
 # files
 *.exe
+*.o
+*.class
+*.bak
+*.iml

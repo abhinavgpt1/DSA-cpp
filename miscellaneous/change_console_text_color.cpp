@@ -26,7 +26,7 @@ void showLoadingScreen()
 }
 int main()
 {
-    cout << endl
-         << endl;
+    cout << endl;
     showLoadingScreen();
+    cout << endl;
 }
