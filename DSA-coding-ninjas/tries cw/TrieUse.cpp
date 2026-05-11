@@ -2,8 +2,8 @@
 using namespace std;
 #include "Trie.h"
 
-
-int main() {
+int main()
+{
 	Trie t;
 	t.insertWord("and");
 	t.insertWord("are");
@@ -14,4 +14,3 @@ int main() {
 	t.removeWord("and");
 	cout << t.search("and") << endl;
 }
-

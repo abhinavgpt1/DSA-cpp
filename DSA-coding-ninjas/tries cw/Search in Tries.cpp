@@ -10,13 +10,13 @@ Note : main function is given for your reference which we are using internally t
 #include <string>
 
 /***************
- * Main function - 
- 
+ * Main function -
+
 int main() {
     int choice;
     cin >> choice;
     Trie t;
-    
+
     //cout << "asasas";
     while(choice != -1){
         string word;
@@ -46,84 +46,95 @@ int main() {
 }
  **************/
 
-class TrieNode {
-	public :
-	char data;
-	TrieNode **children;
-	bool isTerminal;
+class TrieNode
+{
+public:
+    char data;
+    TrieNode **children;
+    bool isTerminal;
 
-	TrieNode(char data) {
-		this -> data = data;
-		children = new TrieNode*[26];
-		for(int i = 0; i < 26; i++) {
-			children[i] = NULL;
-		}
-		isTerminal = false;
-	}
+    TrieNode(char data)
+    {
+        this->data = data;
+        children = new TrieNode *[26];
+        for (int i = 0; i < 26; i++)
+        {
+            children[i] = NULL;
+        }
+        isTerminal = false;
+    }
 };
 
-class Trie {
+class Trie
+{
     TrieNode *root;
-    
-    public :
-    
-    Trie() {
+
+public:
+    Trie()
+    {
         root = new TrieNode('\0');
     }
-    
-    void insertWord(TrieNode *root, string word) {
+
+    void insertWord(TrieNode *root, string word)
+    {
         // Base case
-        if(word.size() == 0) {
-            root -> isTerminal = true;
+        if (word.size() == 0)
+        {
+            root->isTerminal = true;
             return;
         }
-        
+
         // Small Calculation
         int index = word[0] - 'a';
         TrieNode *child;
-        if(root -> children[index] != NULL) {
-            child = root -> children[index];
+        if (root->children[index] != NULL)
+        {
+            child = root->children[index];
         }
-        else {
+        else
+        {
             child = new TrieNode(word[0]);
-            root -> children[index] = child;
+            root->children[index] = child;
         }
-        
+
         // Recursive call
         insertWord(child, word.substr(1));
     }
-    
+
     // For user
-    void insertWord(string word) {
+    void insertWord(string word)
+    {
         insertWord(root, word);
     }
-    
-   	bool search(TrieNode * root, string word) {
+
+    bool search(TrieNode *root, string word)
+    {
         // Write your code here
         // if(root == NULL) //redundant//will be handled on its own
         //     return false;
-         
-        if(word.length() == 0){
+
+        if (word.length() == 0)
+        {
             // if(root->isTerminal)
             //     return true;
             // else
             //     return false;
-            
-            //OR
-            
+
+            // OR
+
             return root->isTerminal;
         }
-        
+
         int index = word[0] - 'a';
-        TrieNode * child = root -> children[index];
-        if(child == NULL)
+        TrieNode *child = root->children[index];
+        if (child == NULL)
             return false;
-         
+
         return search(child, word.substr(1));
-        
     }
-    
-    bool search(string word) {
+
+    bool search(string word)
+    {
         return search(root, word);
     }
 };
